@@ -1,4 +1,8 @@
-import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { LOCALE_ID, NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
+import localePt from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localePt);
+
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
@@ -23,7 +27,8 @@ import { CadastrarProduto } from './components/produtos/cadastrar-produto/cadast
     AppRoutingModule
   ],
   providers: [
-    provideBrowserGlobalErrorListeners()
+    provideBrowserGlobalErrorListeners(),
+    { provide: LOCALE_ID, useValue:'pt-BR'},
   ],
   bootstrap: [App]
 })

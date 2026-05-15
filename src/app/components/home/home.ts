@@ -9,10 +9,11 @@ import { Component } from '@angular/core';
 export class Home {
      nomeProduto: string ="Curso de Angular";
      anuncio: string = `O ${this.nomeProduto} está em promoção`;
-     idProduto: number = 123;
-     precoProduto: number = 2.59;
+     idProduto: number = 3;
+     precoProduto: number = 2.51;
      promocao: boolean = true;
      foto : string ="img/cat.png"
+     dataValidade = "2021/07/13"
 
      testVariaveis(): void
      {

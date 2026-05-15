@@ -4,7 +4,7 @@
  <img [src]="foto">
   <div class="card-body">
     <h5 class="card-title">
-        {{nomeProduto}} 
+        {{nomeProduto | uppercase}} 
     
      <!--<span *ngIf="promocao; else elseBlock" class="badge text-bg-success">Promoção</span>
     <ng-template #elseBlock>
@@ -20,7 +20,8 @@
      
     
        </h5>
-    <p class="card-text">Identificação: {{idProduto}}</p>
-    <a href="#" class="btn btn-primary float-end">R$ {{precoProduto}}</a>
+    <p class="card-text">Identificação: {{idProduto | number:"2.0-0"}} <br>
+    Validação: {{dataValidade | date : 'shortDate'}} </p>
+    <a href="#" class="btn btn-primary float-end"> {{precoProduto | currency: 'BRL'}}</a>
   </div>
 </div>
