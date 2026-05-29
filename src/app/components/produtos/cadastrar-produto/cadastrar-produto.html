@@ -5,7 +5,8 @@
             <div class="col-md-12">
                 <div class="form-group">
                     <label for="nome">Nome do Produto:</label>
-                    <input type="text" class="form-control" placeholder="Digite o nome do Produto">
+                    <input type="text" class="form-control" placeholder="Digite o nome do Produto" nome="nomeProduto"
+                        [(ngModel)]="nome" />
                 </div>
             </div>
         </div>
@@ -14,14 +15,14 @@
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="validade">Validade do Produto:</label>
-                    <input type="date" class="form-control" />
+                    <input type="date" class="form-control" name="validade" [(ngModel)]="validade" />
                 </div>
             </div>
         </div>
         <div class="col-md-6">
             <div class="form-group">
                 <label for="precoProduto">Preço do Produto:</label>
-                <input type="number" class="form-control" placeholder="0.00" />
+                <input type="number" class="form-control" placeholder="0.00" name="preco" [(ngModel)]="preco" />
             </div>
         </div>
         <div class="row">
@@ -29,10 +30,17 @@
                 <button class="btn btn-default" routerLink="/produtos">
                     Volver
                 </button>
-                <button class="btn btn-success float-end">
+                <button class="btn btn-success float-end" (click)="salvarProduto()">
                     Salvar
                 </button>
             </div>
+        </div>
+        <div class="card mt-3">
+            <p>Nome: {{nome}} </p>
+            <p>Validade: {{validade}} </p>
+            <p>Preço: {{preco}}</p>
+           
+           
         </div>
     </form>
 </div>
